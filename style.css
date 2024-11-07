@@ -1,0 +1,231 @@
+.body {
+    background: linear-gradient(135deg, #000000, #0E1211, #15251D, #308338 );
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding: 40px;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.foto-perfil {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.descripcion-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.descripcion-perfil h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.descripcion-perfil h3 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.descripcion-perfil p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin: 0px 0;
+}
+
+.botones-links {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    
+}
+
+.boton-contacto { 
+    width: 65px;
+    height: auto;
+}
+
+.botones-links button {
+    background-color: #007f41;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.botones-links button:hover {
+    background-color: #009b4f;
+}
+
+.skills {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.bloque-skills {
+    margin-top: 2rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #181818;
+    border-radius: 1rem;
+    padding: 2rem;
+    gap: 2rem;
+
+}
+
+.bloque-logotipos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.logotipos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logotipos img {
+    width: 60px;
+    height: auto;
+}
+
+.proyectos {display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+
+.proyectos h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cuadro-proyectos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.titulo-proyectos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+.proyecto {
+    background-color: #181818;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.proyecto img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.proyecto h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.proyecto p {
+    color: white;
+    margin: 0;
+}
+
+.controles-carrusel {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    
+}
+
+.siguiente {
+    width: 50%;
+    height: auto;
+    margin-left: 3rem;
+}
+
+.anterior {
+    width: 50%;
+    height: auto;
+    margin-right: 3rem;
+}
+
+.controles-carrusel button {
+    
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .perfil {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cuadro-proyectos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .botones-links {
+        flex-direction: column;
+    }
+
+    .bloque-logotipos {
+        flex-direction: column;
+    }
+}
