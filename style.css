@@ -133,79 +133,107 @@ a {
     height: auto;
 }
 
-.proyectos {display: flex;
+.titulo-proyectos {
+    display: flex;
     flex-direction: row;
-    text-align: center;
-    align-items: center;
+    justify-content: center
+
+
+
+}
+
+
+
+.proyectos {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
 }
 
 .proyectos h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+    color: white;
+    text-align: center;
 }
 
 .cuadro-proyectos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex; /* Cambiamos de grid a flex para permitir el scroll horizontal */
     gap: 2rem;
-    margin-bottom: 2rem;
+    overflow-x: hidden; /* Oculta el scroll horizontal */
+    scroll-behavior: smooth; /* Para un desplazamiento suave */
+    padding: 1rem;
 }
-
-.titulo-proyectos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-
 
 .proyecto {
+    min-width: calc(40% - 1rem); /* Asegura que se muestren 2 proyectos */
+    flex-shrink: 0; /* Evita que los proyectos se compriman */
     background-color: #181818;
     border-radius: 1rem;
     padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.proyecto:hover {
+    transform: scale(1.02);
 }
 
 .proyecto img {
     width: 100%;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
     border-radius: 0.5rem;
 }
 
 .proyecto h3 {
-    margin: 0 0 0.5rem 0;
+    margin: 0.5rem 0;
+    color: white;
 }
 
 .proyecto p {
     color: white;
-    margin: 0;
+    margin: 0.5rem 0;
 }
 
+/* Estilos actualizados para los controles */
 .controles-carrusel {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
 }
 
-.siguiente {
-    width: 50%;
-    height: auto;
-    margin-left: 3rem;
+.controles-carrusel:first-child {
+    left: 10px;
 }
 
+.controles-carrusel:last-child {
+    right: 10px;
+}
+
+.siguiente, 
 .anterior {
-    width: 50%;
-    height: auto;
-    margin-right: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
-.controles-carrusel button {
-    
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
+.siguiente:hover, 
+.anterior:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.siguiente img, 
+.anterior img {
+    width: 24px;
+    height: auto;
+    display: block;
 }
 
 
@@ -227,5 +255,13 @@ a {
 
     .bloque-logotipos {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+   
+    .proyecto img {
+        width: 100%;
+        height: auto;
     }
 }
